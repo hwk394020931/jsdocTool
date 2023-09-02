@@ -1,0 +1,36 @@
+{
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc"]
+    },
+    "source": {
+    	"include":["../../src/a"],
+        "includePattern": ".+\\.(j|t)s(doc|x)?$",
+        "excludePattern": ".+\\.(test|spec).ts"
+    },
+    "plugins": [
+        "plugins/markdown",
+        "minami/node_modules/jsdoc-babel"
+    ],
+    "babel":{
+        "extensions": ["ts", "tsx"],
+        "babelrc": false,
+        "presets": ["@babel/preset-typescript"]
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": true,
+        "useLongnameInNav": false,
+        "showInheritedInNav": true,
+        "default": {
+			"outputSourceFiles" : false
+        }
+    },
+    "opts": {
+        "destination": "./resources/page/jsdoc",
+        "encoding": "utf8",
+        "private": true,
+        "recurse": true,
+        "template": "./minami"
+    }
+}
